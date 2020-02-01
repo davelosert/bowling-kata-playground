@@ -1,12 +1,21 @@
 export const createGame = () => {
-    let scored = false;
-    let score = 0;
+    let rolls = [];
     return {
         roll: (pins: number) => {
-            score += pins;
+            rolls = [...rolls, pins];
         },
         score: (): number => {
-            return score;
+            let rollCounter = 0;
+            let sum = 0;
+            for(let frame = 0; frame < 10; frame++){
+                const currentScore = rolls[rollCounter] + rolls[rollCounter + 1];
+                if(currentScore === 10) {
+                    sum += rolls[rollCounter + 2];
+                }
+                sum += currentScore;
+                rollCounter += 2;
+            }
+            return sum;
         }
     }
 }
