@@ -5,3 +5,7 @@ This repo is just to save my state sometimes when I came up with an interesting 
 
 The rules for the bowling-kata can be read here:
 http://codingdojo.org/kata/Bowling/
+
+
+## Tech Stack
+Kata and tests are using JavaScript / TypeScript and [Jest](https://jestjs.io/)
